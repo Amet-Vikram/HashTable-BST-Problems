@@ -2,6 +2,7 @@ package com.bridgelabz.dsa.bst;
 
 public class BinarySearchTree<T extends Comparable<T>> {
     Node<T> root;
+    static boolean flag = false;
 
     public BinarySearchTree() {
         root = null;
@@ -54,5 +55,22 @@ public class BinarySearchTree<T extends Comparable<T>> {
             return 0;
         else
             return(size(node.left) + 1 + size(node.right));
+    }
+
+    public boolean searchNode(Node<T> node, T value) {
+        if(root == null)
+            return flag;
+        else {
+            if (node.data == value) {
+                flag = true;
+            }
+            if (!flag && node.left != null) {
+                searchNode(node.left, value);
+            }
+            if (!flag && node.right != null) {
+                searchNode(node.right, value);
+            }
+        }
+        return flag;
     }
 }

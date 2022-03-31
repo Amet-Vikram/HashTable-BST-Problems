@@ -18,9 +18,10 @@ public class Main {
         tree.insert(63);
         tree.insert(67);
 
-        tree.inorderTraversal(tree.root);
-        System.out.println("\nTotal nodes: "+tree.size(tree.root));
 
-
+        if(tree.searchNode(tree.root, 100))
+            System.out.println("Element is present");
+        else
+            System.out.println("Element is not present");
     }
 }
