@@ -45,6 +45,34 @@ class MyHashMap<K, V> {
         return (myMapNode == null) ? null : myMapNode.getValue();
     }
 
+    public void remove(K word) {
+        MyMapNode<K, V> currentNode = head;
+        MyMapNode<K, V> previousNode = null;
+        while (currentNode != null && currentNode.getKey().equals(word)) {
+            head = currentNode.getNext();
+            return;
+        }
+        while (currentNode != null && !(currentNode.getKey().equals(word))) {
+            previousNode = currentNode;
+            currentNode = currentNode.getNext();
+        }
+        if (currentNode != null) {
+            previousNode.next = currentNode.next;
+        }
+        if(currentNode == null)
+            System.out.println("Word not found!");
+    }
+
+    public int size(){
+        MyMapNode<K, V> currentNode = head;
+        int position = 0;
+        while (currentNode != null) {
+            position++;
+            currentNode = currentNode.getNext();
+        }
+        return position;
+    }
+
     @Override
     public String toString() {
         return "Linked List Nodes { " + head + " }";
