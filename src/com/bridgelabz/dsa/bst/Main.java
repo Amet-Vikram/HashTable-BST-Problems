@@ -2,12 +2,25 @@ package com.bridgelabz.dsa.bst;
 
 public class Main {
     public static void main(String[] args) {
-        BinarySearchTree<Integer> binary = new BinarySearchTree<>();
+        BinarySearchTree<Integer> tree = new BinarySearchTree<>();
 
-        binary.insert(56);
-        binary.insert(30);
-        binary.insert(70);
+        tree.insert(56);
+        tree.insert(30);
+        tree.insert(70);
+        tree.insert(22);
+        tree.insert(40);
+        tree.insert(11);
+        tree.insert(3);
+        tree.insert(16);
+        tree.insert(60);
+        tree.insert(95);
+        tree.insert(65);
+        tree.insert(63);
+        tree.insert(67);
 
-        binary.inorderTraversal(binary.root);
+        tree.inorderTraversal(tree.root);
+        System.out.println("\nTotal nodes: "+tree.size(tree.root));
+
+
     }
 }

@@ -48,4 +48,11 @@ public class BinarySearchTree<T extends Comparable<T>> {
                 inorderTraversal(node.right);
         }
     }
+
+    public int size(Node<T> node) {
+        if (node == null)
+            return 0;
+        else
+            return(size(node.left) + 1 + size(node.right));
+    }
 }
